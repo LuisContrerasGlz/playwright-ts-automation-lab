@@ -21,11 +21,13 @@ test.describe("Smoke with locators (M02)", () => {
 
         console.log(welcomeHeader);
 
-        
+        const usernameLabel = await page.getByText("USERNAME").textContent();
+        console.log(usernameLabel);
 
         await page.getByRole("textbox", { name: "standard_user" }).fill(USERNAME);
  
-        await page.getByTestId("password-desktop").fill(PASSWORD);
+        //await page.getByTestId("password-desktop").fill(PASSWORD);
+        await page.getByPlaceholder("••••••••").fill(PASSWORD);
 
         await page.getByTestId("market-MX").click();
 
@@ -33,6 +35,7 @@ test.describe("Smoke with locators (M02)", () => {
 
         // Level 1
         await page.getByRole("button", { name: "Sign In" }).click();
+        await page.getByAltText("Pepperoni").click();
 
         // Assert
       
