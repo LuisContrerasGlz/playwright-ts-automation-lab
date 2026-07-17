@@ -41,6 +41,9 @@ test.describe("Smoke with locators (M02)", () => {
       
         const pizzaCards = page.locator('[data-testid^="pizza-card-"]');
         await expect(pizzaCards.first()).toBeVisible();
+        const hawaian = pizzaCards.nth(2).innerText();
+        console.log(await hawaian);
+        pizzaCards.nth(2).click();
         const count = await pizzaCards.count();
         expect(count).toBeGreaterThan(0);
         expect(count).toBeGreaterThanOrEqual(1);
