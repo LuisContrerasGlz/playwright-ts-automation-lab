@@ -12,6 +12,17 @@ test.describe("Smoke with locators (M02)", () => {
         // Act
         //await page.getByTestId("username-desktop").fill(USERNAME);
 
+        const h1Locator = page.getByRole("heading", { level: 1}).textContent();
+        console.log(await h1Locator);
+
+        const welcomeHeaderLocator = page.getByRole("heading", { name: "Welcome back!", level: 2});
+        await expect(welcomeHeaderLocator).toBeVisible();
+        const welcomeHeader = await welcomeHeaderLocator.textContent();
+
+        console.log(welcomeHeader);
+
+        
+
         await page.getByRole("textbox", { name: "standard_user" }).fill(USERNAME);
  
         await page.getByTestId("password-desktop").fill(PASSWORD);
