@@ -10,13 +10,18 @@ export interface User {
 }
 
 export interface Market {
-  countryCode: CountryCode;
+  // Accept either `countryCode` or `code` depending on JSON source
+  countryCode?: CountryCode;
+  code?: CountryCode;
   currency: Currency;
-  fullname: string;
-  country: string;
+  fullName: string;
+  // optional country name if present
+  country?: string;
   phone: string;
   address: string;
   colonia?: string;
   zipCode?: string;
+  // accept both `taxRate` (camelCase in JSON) and `taxrate` (legacy)
+  taxRate?: number;
   taxrate?: number;
 }
