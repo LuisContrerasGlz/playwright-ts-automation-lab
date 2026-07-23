@@ -17,7 +17,7 @@ const currencySymbols: Record<Currency, string> = {
   MXN: "$",
   USD: "$",
   CHF: "CHF",
-  JPY: "¥",
+  JPY: "￥",
 };
 
 test.describe("Data-Driven Tests", () => {
